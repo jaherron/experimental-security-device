@@ -3,7 +3,7 @@ A weird security device made with a pi-top[4].
 
 ##  How does it work?
 What you need is:
-1. The script
+1. The script (esd_v1.0.py)
 2. A pi-top[4]
 3. The pi-top[4] Foundation Kit
 
