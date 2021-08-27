@@ -22,5 +22,4 @@ I made a [YouTube short](https://www.youtube.com/watch?v=DT0UeTSa_VE) about it.
 I also demonstrated it in my [full-length pi-top[4] review](https://www.youtube.com/watch?v=Isvwee-22lI). (it's a long video!)
 
 ##  Can I contact you with questions?
-Look for my Discord server in [my personal repository](https://github.com/jaherron/jaherron).  
-You can also direct message me on [Twitter](https://twitter.com/littlebit670).  
+You can DM me on Discord (Bit#0996) or [Twitter](https://twitter.com/littlebit670).
