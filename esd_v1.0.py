@@ -5,23 +5,34 @@ from pitop.miniscreen import Miniscreen
 import datetime
 import pyttsx3
 
+# Green LED in port D4
 gled = LED("D4")
+# Red LED
 rled = LED("D5")
+# Button on port D2
 button = Button("D2")
+# Ultrasonic Sensor on port D6
 sensor = UltrasonicSensor("D6")
+# Buzzer on port D3
 buzzer = Buzzer("D3")
+# pi-top miniscreen
 miniscreen = Miniscreen()
+# Initialize pyttsx3
 tts = pyttsx3.init()
 
-button.hold_time = 3
-sensor.threshold_distance = 0.39
+button.hold_time = 3 # Button hold time required to activate panic feature
+sensor.threshold_distance = 0.39 # Sensor distance required to activate alarm when armed
+
+# Initial states of variables
 active = False
 panic = False
 exitdelay = True
-gled.on()
 
+# Initial system state is disarmed, turn on green LED and report status in console
+gled.on()
 print("Alarm off")
 
+# Enable/disable exit delay, triggered by X button
 def exit_timer_toggle():
     global exitdelay
     if exitdelay == False:
@@ -31,6 +42,7 @@ def exit_timer_toggle():
         exitdelay = False
         print("Exit delay off")
 
+# Restart the exit timer, triggered by O button on pi-top
 def restartexit():
     global active
     if not active:
@@ -51,6 +63,7 @@ def restartexit():
         buzzer.off()
         print("Alarm on")
 
+# Main alarm trigger function
 def alarm():
     global active
     if active:
@@ -61,6 +74,7 @@ def alarm():
         tts.say("Alarm triggered")
         tts.runAndWait()
 
+# Panic alarm, triggered by holding main button
 def panic():
     global active
     global panic
@@ -74,7 +88,7 @@ def panic():
     tts.say("Panic alarm activated")
     tts.runAndWait()
 
-
+# Main system toggle function, triggered by main button
 def systemtoggle():
     global active
     global panic

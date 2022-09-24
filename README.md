@@ -15,7 +15,7 @@ Connection ports:
 5. Buzzer in port D3
 
 ##  Can I submit modified versions of the script?
-Just post your versions in the community-mods folder.
+Just post your versions in a folder called community-mods. I don't know how to make an empty folder in GitHub.
 
 ##  Is there a demonstration?
 I made a [YouTube short](https://www.youtube.com/watch?v=DT0UeTSa_VE) about it.
